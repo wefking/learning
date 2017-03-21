@@ -1,7 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const compress = require('compression');
-const bodyParser = requrie('body-parser');
+const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 
 module.exports = function() {
@@ -17,6 +17,9 @@ module.exports = function() {
   }));
   app.use(bodyParser.json());
   app.use(methodOverride());
+
+  app.set('views','app/views');
+  app.set('view engine', 'ejs');
 
   require('../app/routes/index.server.routes.js')(app);
   return app;
