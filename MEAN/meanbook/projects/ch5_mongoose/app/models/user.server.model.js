@@ -16,7 +16,7 @@ const UserSchema = new Schema({
   },
   website: {
     type: String,
-    set: function(url) {
+    get: function(url) {
       if (!url) {
         return url;
       } else {
@@ -28,6 +28,6 @@ const UserSchema = new Schema({
     }
   }
 });
-
+UserSchema.set('toJSON', {getters: true});
 mongoose.model('User', UserSchema);
 
