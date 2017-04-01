@@ -53,6 +53,9 @@ UserSchema.virtual('fullName').get(function() {
     this.firstName = splitName[0] || ' ';
     this.lastName = splitName[1] || ' ';
 });
+UserSchema.post('save', function(next) {
+  console.log('The user "'+this.username+'" details were saved.');
+});
 UserSchema.set('toJSON', {getters: true, virtuals: true});
 mongoose.model('User', UserSchema);
 
