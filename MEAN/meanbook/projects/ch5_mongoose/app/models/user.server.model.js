@@ -6,12 +6,14 @@ const UserSchema = new Schema({
   lastName: String,
   email: {
     type: String,
-    index: true
+    index: true,
+    match: /.+\@.+\..+/
   },
   username: {
     type: String,
     trim: true,
-    unique: true
+    unique: true,
+    required: true
   },
   password: String,
   created: {
@@ -30,6 +32,10 @@ const UserSchema = new Schema({
       return url;
       }
     }
+  },
+  role: {
+    type: String,
+    enum: ['Admin', 'Owner', 'User']
   }
 });
 UserSchema.virtual('fullName').get(function() {
