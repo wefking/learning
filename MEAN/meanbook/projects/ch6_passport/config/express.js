@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const passport = require('passport');
+const flash = require('connect-flash'); 
 
 module.exports = function() {
   const app = express();
@@ -30,8 +31,9 @@ module.exports = function() {
   app.set('views','app/views');
   app.set('view engine', 'ejs');
 
-  app.use('passport.initialize()');
-  app.use('passport.session()');
+  app.use(flash());
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/user.server.routes.js')(app);

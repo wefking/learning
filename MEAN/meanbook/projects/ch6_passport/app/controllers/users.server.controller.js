@@ -16,8 +16,8 @@ function getErrorMessage(err) {
 
   if (err.code) {
     switch (err.code) {
-      case 11000;
-      case 11001;
+      case 11000:
+      case 11001:
         message = 'Username already existis';
         break;
       default:
