@@ -1,0 +1,114 @@
+
+Nothing included
+
+     1	//#include<iostream>
+     2	int main()
+     3	{
+     4	  std::cout << "Hello, Programming!\nHere we go!\n";
+     5	  return 0;
+     6	}
+
+exercise1.cpp: In function ‘int main()’:
+exercise1.cpp:4:3: error: ‘cout’ is not a member of ‘std’
+   std::cout << "Hello, Programming!\nHere we go!\n";
+   ^
+-------------------------------------------------------------------
+
+Misspelled header:
+
+     1	#include<iosteam>
+     2	int main()
+     3	{
+     4	  std::cout << "Hello, Programming!\nHere we go!\n";
+     5	  return 0;
+     6	}
+
+
+exercise1.cpp:1:18: fatal error: iosteam: No such file or directory
+compilation terminated.
+
+
+-------------------------------------------------------------------
+
+String not terminated with "
+
+
+     1	#include<iostream>
+     2	int main()
+     3	{
+     4	  std::cout << "Hello, Programming!\nHere we go!\n;
+     5	  return 0;
+     6	}
+
+
+exercise1.cpp:4:16: warning: missing terminating " character
+   std::cout << "Hello, Programming!\nHere we go!\n;
+                ^
+exercise1.cpp:4:3: error: missing terminating " character
+   std::cout << "Hello, Programming!\nHere we go!\n;
+   ^
+exercise1.cpp: In function ‘int main()’:
+exercise1.cpp:5:3: error: expected primary-expression before ‘return’
+   return 0;
+   ^
+
+-------------------------------------------------------------------
+
+Abreviation int not used:
+
+     1	#include<iostream>
+     2	integer main()
+     3	{
+     4	  std::cout << "Hello, Programming!\nHere we go!\n";
+     5	  return 0;
+     6	}
+
+
+exercise1.cpp:2:1: error: ‘integer’ does not name a type
+ integer main()
+ ^
+-------------------------------------------------------------------
+
+Operator < used instead of << 
+
+     1	#include<iostream>
+     2	int main()
+     3	{
+     4	  std::cout < "Hello, Programming!\nHere we go!\n";
+     5	  return 0;
+     6	}
+
+
+Nothing is displayed on screen.
+
+-------------------------------------------------------------------
+
+Single quotes used:
+
+
+     1	#include<iostream>
+     2	int main()
+     3	{
+     4	  std::cout << 'Hello, Programming!\nHere we go!\n';
+     5	  return 0;
+     6	}
+
+exercise1.cpp:4:16: warning: character constant too long for its type
+   std::cout << 'Hello, Programming!\nHere we go!\n';
+                ^
+-------------------------------------------------------------------
+
+output statement not terminated with a semicolon
+
+
+     1	#include<iostream>
+     2	int main()
+     3	{
+     4	  std::cout << "Hello, Programming!\nHere we go!\n"
+     5	  return 0;
+     6	}
+
+exercise1.cpp: In function ‘int main()’:
+exercise1.cpp:5:3: error: expected ‘;’ before ‘return’
+   return 0;
+   ^
