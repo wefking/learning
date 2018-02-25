@@ -1,0 +1,19 @@
+3-7-names-1-goodbye-cruel-world.cpp: In function ‘int Main()’:
+3-7-names-1-goodbye-cruel-world.cpp:7:4: error: ‘STRING’ was not declared in this scope
+    STRING s = "Goodbye, cruel wordl!";
+    ^
+3-7-names-1-goodbye-cruel-world.cpp:8:4: error: ‘cOut’ was not declared in this scope
+    cOut << S << "\n";
+    ^
+3-7-names-1-goodbye-cruel-world.cpp:8:12: error: ‘S’ was not declared in this scope
+    cOut << S << "\n";
+            ^
+
+
+leaving Main() error as the last one to resolve shows:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/../../../x86_64-linux-gnu/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status
+
+
