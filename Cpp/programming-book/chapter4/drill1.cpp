@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<cmath>
 
 using namespace std;
 void print_values(double,double);
@@ -12,7 +13,9 @@ int main()
   while (cin>>num1>>num2)
   {
    cout << num1 << '\t' << num2 << '\n';
-   if (num1 < num2) 
+   if (abs(num1-num2) < 0.01) 
+       cout << "the numbers are almost equal.\n";
+   else if (num1 < num2) 
    {
      print_values(num1,num2);
    } 
@@ -24,6 +27,7 @@ int main()
     cout << "The numers are the same\n";   
   }
 }
+
 
 
 
