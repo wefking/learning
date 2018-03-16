@@ -9,31 +9,34 @@ int main()
 {
   vector<double> nums;
   double num1=0;
-  double num2=0;
-  while (cin>>num1>>num2)
+  double smallest = 0;
+  double largest = 0;
+
+  while (cin>>num1)
   {
-   cout << num1 << '\t' << num2 << '\n';
-   if (abs(num1-num2) < 0.01) 
-       cout << "the numbers are almost equal.\n";
-   else if (num1 < num2) 
+   if (smallest == largest && smallest == 0) 
    {
-     print_values(num1,num2);
-   } 
-   else if (num1 > num2)
+     smallest = num1;
+     largest = num1;
+   }
+   if (num1 < smallest) 
    {
-     print_values(num2,num1);
+   smallest = num1;
    } 
-   else
-    cout << "The numers are the same\n";   
+   else if (num1 > largest)
+   {
+     largest = num1;
+   } 
+   print_values(smallest,largest);
   }
 }
 
 
 
 
-void print_values(double num1, double num2)
+void print_values(double smallest, double largest)
 {
-     cout << "the smaller value is: " << num1 << '\n';
-     cout << "the larger value is: " << num2 << '\n';
+     cout << "the smalleist so far is: " << smallest << '\n';
+     cout << "the largest so far is: " << largest << '\n';
 
 }
