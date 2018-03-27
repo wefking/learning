@@ -10,6 +10,7 @@ int main()
         vector<int> v;
         for (int x;cin >>x;)
         {
+            cout << "input: " << x << "\n";
             if (!cin)  cout << "Could read a proper value.\n";
             v.push_back(x);
         }
