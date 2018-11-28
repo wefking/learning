@@ -1,0 +1,45 @@
+<!--<textarea rows="10">{{ newPost }}</textarea>-->
+<!-- Property binding: -->
+<!-- <textarea rows="10" [value]="'Value: Enter your text '"></textarea> -->
+<!-- <textarea rows="10" [value]="newPost" #postInput></textarea> -->
+<!-- Two way binding" -->
+<!-- ngModel is an Angular directive that will liste to user input, emit it and store it.
+It needs to be binded to a property. We create a new property 'enteredValue'
+It also needs to be loaded first from FormsModule-->
+<mat-card>
+  <form (submit)="onAddPost(postForm)" #postForm="ngForm">
+      <mat-form-field>
+          <input
+            matInput
+            type="text"
+            name="title"
+            ngModel
+            required
+            minlength="3"
+            #title="ngModel">
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+          <!-- <mat-error *ngIf="postForm.getControl('title').invalid">{{ }}</mat-error> -->
+          <mat-error *ngIf="title.invalid">Plrease enter a post title</mat-error>
+        </mat-form-field>
+          <mat-form-field>
+              <textarea
+                matInput
+                rows="6"
+                name="content"
+                ngModel
+                required
+                minlength="4"
+                #content="ngModel"></textarea>
+              <mat-error *ngIf="content.invalid">Plrease enter some content </mat-error>
+            </mat-form-field>
+            <!-- <button (click)='onAddPost()'>Save post</button> -->
+            <button
+              mat-raised-button
+              color='accent'
+              type="submit">Save post</button>
+  </form>
+</mat-card>
+<!-- <hr> -->
+<!-- <button (click)='onAddPost(postInput)'>Save post</button> -->
+<!-- <button (click)='onAddPost()'>Save post</button> -->
+<!-- <p>{{ newPost }}</p> -->

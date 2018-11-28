@@ -1,0 +1,9 @@
+chapter4
+
+
+4.4.2.2 Blocks
+A sequence of statements delimited by curly brackets {} is called a block or a compound statement.
+{} empty block is useful for expressing that nothing is to be done.
+
+4.4.2.3 for statements
+vbc

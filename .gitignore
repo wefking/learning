@@ -1,0 +1,10 @@
+*.diff
+*.err
+*.orig
+*.log
+*.swo
+*.swp
+*.vi
+*~
+node_modules/
+.tmp/
